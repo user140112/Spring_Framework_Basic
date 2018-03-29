@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-init-method="init" default-destroy-method="destroy"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="patient" class="com.springpractice.first.test.Patient"
+		scope="singleton" factory-method="getInstance" p:address-ref="address"
+		c:_0="12"
+		c:_1="shakil"
+		>
+		<property name="nid" value="123456"></property>
+	</bean>
+
+
+	<bean id="address" class="com.springpractice.first.test.Address">
+		<constructor-arg name="street" value="Dhormotola"></constructor-arg>
+		<constructor-arg name="postcode" value="7400"></constructor-arg>
+	</bean>
+
+    <bean id="address2" class="com.springpractice.first.test.Address" p:street="palbari" p:postcode="1200">
+		
+	</bean>
+</beans>
